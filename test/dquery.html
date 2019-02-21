@@ -269,7 +269,6 @@ function enfant_onclick_sur_enfant_seul (what) {
 
 function last_enfant_onclick_sur_last_enfant_seul (what) {
   var temp = "";
-  Assert(what, "select3", $(".select:last-child").value[0].id);
   $(".click3:last-child").on("click", function(e) { temp = e.target.id; });
   document.getElementById("enfant3a").click();
   Assert(what + "_a", "", temp);

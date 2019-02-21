@@ -58,7 +58,7 @@ if (!Element.prototype.closest) {
         i.style.display = "block";
       });
     },
-    onx: function (type, filter, fn) {
+    on: function (type, filter, fn) {
       // Attach an event handler function to each matched element
       if (typeof filter === "string") {
         // Syntax .on(type, filter, fn)
@@ -101,7 +101,7 @@ if (!Element.prototype.closest) {
         }, false);
       });
     },
-    on: function (type, filter, fn) {
+    on2: function (type, filter, fn) {
       // Attach an event handler function to each matched element
       if (typeof filter === "string") {
         // Syntax .on(type, filter, fn)

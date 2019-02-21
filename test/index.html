@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Test Golf Solitaire</title>
+    <script>
+      (new Image).src = "../cards/card-" + ((document.documentElement.clientWidth > 736) ? "game.png" : "phone.png");
+    </script>
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      textarea { width: 100%; height: 300px; color: black; background-color: white; font-size: small; }
+    </style>
+  </head>
+
+  <body id="golf">
+
+    <div class="container">
+
+      <div id="header" class="row">
+        <h1><a href="" title="Golf, a fast and fun solitaire card game">Golf<span> Solitaire</span></a></h1>
+        <div class="menu">
+          <button id="game" title="Play a new Golf solitaire (F2)">GAME</button>
+          <button id="hint" title="Show possible moves (H)">HINT</button>
+          <button id="undo" title="Undo last move (Control+Z)">UNDO</button>
+          <button id="tool" title="Select solitaire game">≡</button>
+        </div>
+      </div>
+
+      <div id="solitaire" class="clearfix">
+
+        <div id="tableaux" class="row">
+          <div id="t0" class="column pile pile-fan"></div>
+          <div id="t1" class="column pile pile-fan"></div>
+          <div id="t2" class="column pile pile-fan"></div>
+          <div id="t3" class="column pile pile-fan"></div>
+          <div id="t4" class="column pile pile-fan"></div>
+          <div id="t5" class="column pile pile-fan"></div>
+          <div id="t6" class="column pile pile-fan"></div>
+        </div>
+
+        <div id="plateaux" class="row">
+          <div id="stock" class="column pile pile-stack count"><div class="write"><div>×</div></div></div>
+          <div id="f0" class="column six pile pile-flat"></div>
+        </div>
+
+      </div>
+
+      <textarea id="debug"></textarea>
+
+      <div class="row">
+        <button id="list">≡ Select Solitaire Game...</button>
+      </div>
+
+    </div>
+
+    <div id="win" class="dialog">
+      <h3 class="win">Congratulations, you won! <span>It's only a game, but still.</span></h3>
+      <h3 class="lost">Game over! <span>No big deal, it's only a game.</span></h3>
+      <button id="again">NEW GAME?</button>
+    </div>
+
+    <div id="run" class="dialog">
+      <h3>Let's play another solitaire game</h3>
+      <p>
+        <a href="/">KLONDIKE</a>
+        <a href="/klondike-turn-three/">KLONDIKE 3</a>
+        <a href="/aces-up/">ACES UP</a>
+        <a href="/canfield/">CANFIELD</a>
+        <a href="/canfield-turn-three/">CANFIELD 3</a>
+        <a href="/cruel/">CRUEL</a>
+        <a href="/golf/">GOLF</a>
+        <a href="/monte-carlo/">MONTE CARLO</a>
+        <a href="/pyramid/">PYRAMID</a>
+        <a href="/pyramid-turn-three/">PYRAMID 3</a>
+        <a href="/russian/">RUSSIAN</a>
+        <a href="/yukon/">YUKON</a>
+      </p>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="dquery.js"></script>
+    <script src="golf.min.js"></script>
+    <script>(function() { Start(); })();</script>
+
+  </body>
+
+</html>

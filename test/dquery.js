@@ -58,7 +58,7 @@ if (!Element.prototype.closest) {
         i.style.display = "block";
       });
     },
-    on: function (type, filter, fn) {
+    onx: function (type, filter, fn) {
       // Attach an event handler function to each matched element
       if (typeof filter === "string") {
         // Syntax .on(type, filter, fn)
@@ -99,6 +99,24 @@ if (!Element.prototype.closest) {
             console.log("  dispatch : none");
           }
         }, false);
+      });
+    },
+    on: function (type, filter, fn) {
+      // Attach an event handler function to each matched element
+      if (typeof filter === "string") {
+        // Syntax .on(type, filter, fn)
+        // => Re-match elements to current selector + parameter filter
+        var s = this.selector + " " + filter;
+        this.value = Array.prototype.slice.call(document.querySelectorAll(s));
+        this.selector = s;
+      } else {
+        // Syntax .on(type, fn)
+        // => "filter" parameter is in fact the "fn" parameter
+        fn = filter;
+      }
+      var _selector = this.selector;
+      return this.each(function (i) {
+        i.addEventListener(type, fn, false);
       });
     },
     addClass: function (v) {

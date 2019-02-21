@@ -75,8 +75,8 @@ if (!Element.prototype.closest) {
       return this.each(function (i) {
         document.addEventListener(type, function (event) {
           var debug = document.getElementById("debug");
-          var temp = `_selector : ${_selector} => ${event.type} on ${event.target.id}`;
-          console.log(`_selector : ${_selector} => ${event.type} on ${event.target.id}`);
+          var temp = "_selector : " + _selector + " => " + event.type + " on " + event.target.id;
+          console.log(temp);
           if (_selector === null) {
             if (debug) debug.value = temp + "\n" + debug.value;
             fn(event); // fn.call(event.target, event);
@@ -84,19 +84,19 @@ if (!Element.prototype.closest) {
             return false;
           } else if (event.target.closest(_selector)) {
             if (debug) debug.value = temp + " => closest\n" + debug.value;
-            console.log(`  dispatch : closest`);
+            console.log("  dispatch : closest");
             fn(event); // fn.call(event.target, event);
             event.stopImmediatePropagation();
             return false;
           } else if (event.target.matches(_selector)) {
             if (debug) debug.value = temp + " => matches\n" + debug.value;
-            console.log(`  dispatch : matches`);
+            console.log("  dispatch : matches");
             fn(event); // fn.call(event.target, event);
             event.stopImmediatePropagation();
             return false;
           } else {
             if (debug) debug.value = temp + " => none\n" + debug.value;
-            console.log(`  dispatch : none`);
+            console.log("  dispatch : none");
           }
         }, false);
       });

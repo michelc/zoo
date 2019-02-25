@@ -254,7 +254,7 @@ function text_modifie_textContent (what) {
 function remove_supprime_du_contenu (what) {
   $("#remove .to-remove").remove();
   var temp = document.getElementById("remove").outerHTML;
-  Assert(what, false, temp.includes(".to-remove"));
+  Assert(what, false, temp.indexOf(".to-remove") === 0);
 }
 
 function parent_onclick_sur_parent_et_enfant (what) {

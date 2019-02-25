@@ -92,6 +92,13 @@
       <p id="enfant3c" class="click3">#onclick .click</p>
     </div>
 
+    <div id="parent4">
+      <h3>Test .on() 4</h3>
+      <p id="enfant4a" class="click4">#onclick .click</p>
+      <p id="enfant4b" class="click4">#onclick .click</p>
+      <p id="enfant4c" class="click4">#onclick .click</p>
+    </div>
+
     <script src="dquery.js"></script>
 
 <script>
@@ -127,6 +134,7 @@ function RunTests() {
   Test(parent_onclick_sur_parent_et_enfant);
   Test(enfant_onclick_sur_enfant_seul);
   Test(last_enfant_onclick_sur_last_enfant_seul);
+  Test(parent_onclick_et_filter);
 }
 
 function Assert(what, expected, result) {
@@ -276,6 +284,15 @@ function last_enfant_onclick_sur_last_enfant_seul (what) {
   Assert(what + "_b", "", temp);
   document.getElementById("enfant3c").click();
   Assert(what + "_c", "enfant3c", temp);
+}
+
+function parent_onclick_et_filter (what) {
+  var temp = "";
+  $("#parent4").on("click", ".click4", function(e) { temp = e.target.id; });
+  document.getElementById("parent4").click();
+  Assert(what + "_1", "", temp);
+  document.getElementById("enfant4b").click();
+  Assert(what + "_2", "enfant4b", temp);
 }
 
 </script>

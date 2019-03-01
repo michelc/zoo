@@ -96,7 +96,7 @@ if (!Element.prototype.closest) {
           console.log("  dispatch : none");
         }
       }, false);
-      return this.value;
+      return this;
     },
     on2: function (type, filter, fn) {
       // Attach an event handler function to each matched element

@@ -186,6 +186,7 @@ button:hover { background-color: #05f; }
   background-size: 672px 264px; /* 48x14 x 66x4 */
   border-radius: 4px;
   border-top: 1px solid #aaa;
+  cursor: pointer;
   display: block;
   margin: -66px auto 0 auto;
   padding: 0;
@@ -224,6 +225,7 @@ button:hover { background-color: #05f; }
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: 48px 66px;
+  cursor: pointer;
   min-height: 66px;
   position: relative;
   text-align: center;
@@ -270,7 +272,7 @@ button:hover { background-color: #05f; }
 #stock div div,
 #plateaux .write div {
   color: #eee;
-  cursor: default;
+  cursor: pointer;
   font-size: 4rem;
   font-weight: bold;
   margin-top: -3.2rem !important;
